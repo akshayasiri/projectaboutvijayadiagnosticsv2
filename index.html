@@ -1,0 +1,2187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijaya Diagnostics | Premium Diagnostic Center</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="light-theme">
+    <!-- Navigation -->
+    <header class="main-header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="location-selector">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <select id="city-select">
+                        <option value="hyderabad">Hyderabad</option>
+                        <option value="chennai">Chennai</option>
+                        <option value="bangalore">Bangalore</option>
+                        <option value="delhi">Delhi</option>
+                    </select>
+                </div>
+                <div class="top-links">
+                    <a href="tel:+914023456789"><i class="fas fa-phone"></i> +91 40 2345 6789</a>
+                    <button id="theme-toggle" class="theme-btn">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="container">
+                <a href="#" class="logo home-nav-trigger">
+                    <img src="https://www.vijayadiagnostic.com/_next/image?url=%2Fheader%2Flogo.png&w=640&q=75"
+                        alt="Vijaya Diagnostics" class="logo-img">
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="#home" class="home-nav-trigger">Home</a></li>
+                    <li><a href="#about" class="about-nav-trigger">About</a></li>
+                    <li><a href="#services" class="home-nav-trigger">Services</a></li>
+                    <li><a href="#packages" class="health-nav-trigger">Health Checkups</a></li>
+                    <li><a href="#tests" class="home-nav-trigger">Book a Test</a></li>
+                    <li><a href="#contact" class="home-nav-trigger">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <div class="cart-icon" id="cart-toggle">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <a href="#appointment" class="btn-appointment home-nav-trigger">Book Appointment</a>
+                    <a href="#" class="btn-login">Login</a>
+                    <a href="#" class="btn-signup">Sign Up</a>
+                    <div id="user-profile-container">
+                        <div class="user-profile-btn user-account-btn" id="profile-toggle">
+                            <img src="https://ui-avatars.com/api/?name=User&background=0055a4&color=fff" alt="Profile"
+                                class="profile-avatar">
+                            <span id="user-account-name">My Account</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="profile-dropdown" id="profile-dropdown">
+                            <div class="profile-header">
+                                <img src="https://ui-avatars.com/api/?name=User&background=0055a4&color=fff"
+                                    alt="Profile" class="profile-avatar-large">
+                                <div class="profile-info">
+                                    <h4 id="profile-name">Guest User</h4>
+                                    <p id="profile-email">guest@example.com</p>
+                                </div>
+                            </div>
+                            <div class="profile-menu">
+                                <a href="#" class="profile-menu-item">
+                                    <i class="fas fa-user"></i> My Profile
+                                </a>
+                                <a href="#" class="profile-menu-item">
+                                    <i class="fas fa-file-medical"></i> My Reports
+                                </a>
+                                <a href="#" class="profile-menu-item">
+                                    <i class="fas fa-calendar-check"></i> My Appointments
+                                </a>
+                                <a href="#" class="profile-menu-item" id="logout-btn">
+                                    <i class="fas fa-sign-out-alt"></i> Logout
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile-menu-btn" id="mobile-menu-open">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <div class="logo">
+                    <i class="fas fa-microscope"></i> VIJAYA
+                </div>
+                <i class="fas fa-times" id="mobile-menu-close"></i>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="#home" class="home-nav-trigger">Home</a></li>
+                <li><a href="#about" class="about-nav-trigger">About</a></li>
+                <li><a href="#services" class="home-nav-trigger">Services</a></li>
+                <li><a href="#packages" class="health-nav-trigger">Health Checkups</a></li>
+                <li><a href="#tests" class="home-nav-trigger">Book a Test</a></li>
+                <li><a href="#contact" class="home-nav-trigger">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <main id="main-content">
+        <!-- Categories Bar -->
+        <div class="categories-bar">
+            <div class="container categories-flex">
+                <div class="category-item active" data-cat="all"><i class="fas fa-microscope"></i> <span>Lab
+                        Tests</span></div>
+                <div class="category-item" data-cat="heart"><i class="fas fa-heartbeat"></i> <span>Heart</span></div>
+                <div class="category-item" data-cat="neuro"><i class="fas fa-brain"></i> <span>Neuro</span></div>
+                <div class="category-item" data-cat="ortho"><i class="fas fa-bone"></i> <span>Ortho</span></div>
+                <div class="category-item" data-cat="pediatric"><i class="fas fa-baby"></i> <span>Pediatric</span></div>
+                <div class="category-item" data-cat="women"><i class="fas fa-female"></i> <span>Women Health</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="badge">NABL Accredited Laboratory</span>
+                    <h1>Accurate Diagnostics <br><span class="highlight">You Can Trust</span></h1>
+                    <p>Advanced pathology, high-end radiology, and comprehensive health checkups with 40+ years of
+                        excellence in diagnostic services.</p>
+
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="hero-search-input" placeholder="Search for test or health checkup...">
+                        <button id="hero-search-btn">Search</button>
+                    </div>
+
+                    <div class="hero-ctas">
+                        <a href="#tests" class="btn-primary">Book a Test</a>
+                        <a href="#prescription" class="btn-secondary">Upload Prescription</a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">40+</span>
+                            <span class="stat-label">Years Exp.</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">200+</span>
+                            <span class="stat-label">Centers</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10M+</span>
+                            <span class="stat-label">Patients</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-img-wrapper">
+                        <!-- High quality fallback medical image representation -->
+                        <div class="medical-hero-visual">
+                            <img src="assets/radiology.png" alt="Diagnostics">
+                        </div>
+                        <div class="experience-badge animate-float">
+                            <span class="exp-years">40+</span>
+                            <span class="exp-text">Years of Trust</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How it works -->
+            <section class="how-it-works">
+                <div class="container">
+                    <h2 class="section-title text-center">How to Book a Test?</h2>
+                    <div class="steps-grid">
+                        <div class="step-card">
+                            <div class="step-num">1</div>
+                            <i class="fas fa-search"></i>
+                            <h4>Search Test</h4>
+                            <p>Search for lab tests or health packages.</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-num">2</div>
+                            <i class="fas fa-calendar-alt"></i>
+                            <h4>Book Appointment</h4>
+                            <p>Choose home collection or center visit.</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-num">3</div>
+                            <i class="fas fa-vial"></i>
+                            <h4>Sample Collection</h4>
+                            <p>Our phlebotomist collects your sample.</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-num">4</div>
+                            <i class="fas fa-file-pdf"></i>
+                            <h4>Get Reports</h4>
+                            <p>Download digital reports within 24 hours.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Quick Services -->
+        <section class="quick-services" id="services">
+            <div class="container text-center">
+                <h2 class="section-title">Our Quick Services</h2>
+                <div class="service-split-grid">
+                    <div class="service-big-card lab-card">
+                        <div class="service-tag">Most Popular</div>
+                        <div class="service-icon"><i class="fas fa-microscope"></i></div>
+                        <div class="service-info">
+                            <h3>Laboratory Services</h3>
+                            <p>Blood tests, Urine analysis, Biopsy & more with NABL certification.</p>
+                            <a href="#centre-tests-page" class="btn-primary centre-nav-trigger">Explore Tests</a>
+                        </div>
+                    </div>
+                    <div class="service-big-card radio-card">
+                        <div class="service-tag">Advanced Imaging</div>
+                        <div class="service-icon"><i class="fas fa-x-ray"></i></div>
+                        <div class="service-info">
+                            <h3>Radiology Services</h3>
+                            <p>3T MRI, 128 Slice CT, Ultrasound & Digital X-Ray services.</p>
+                            <a href="#centre-tests-page" class="btn-primary centre-nav-trigger">View Radiology</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card hc-nav-trigger" style="cursor: pointer;">
+                        <div class="icon-box"><i class="fas fa-house-user"></i></div>
+                        <h3>Home Collection</h3>
+                        <p>Get your blood samples collected from your doorstep by trained pros.</p>
+                        <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card download-reports-trigger" style="cursor: pointer;">
+                        <div class="icon-box"><i class="fas fa-file-medical"></i></div>
+                        <h3>Download Reports</h3>
+                        <p>Access your health reports anytime, anywhere through our portal.</p>
+                        <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card health-nav-trigger" style="cursor: pointer;">
+                        <div class="icon-box"><i class="fas fa-heartbeat"></i></div>
+                        <h3>Health Packages</h3>
+                        <p>Comprehensive health checkups tailored for all age groups.</p>
+                        <a href="#packages" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card find-centre-trigger" style="cursor: pointer;">
+                        <div class="icon-box"><i class="fas fa-hospital"></i></div>
+                        <h3>Find a Centre</h3>
+                        <p>Locate the nearest Vijaya Diagnostics center in your city.</p>
+                        <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phase 4: Laboratory Test Section -->
+        <section class="tests-section" id="tests">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Book a <span class="highlight">Laboratory Test</span></h2>
+                    <div class="search-box-mini">
+                        <input type="text" id="test-search" placeholder="Search for tests (e.g. Sugar, Thyroid)...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+
+                <!-- Alphabetical Index -->
+                <div class="alpha-container">
+                    <div class="alpha-bar">
+                        <button class="alpha-btn active" data-letter="all">ALL</button>
+                        <button class="alpha-btn" data-letter="A">A</button>
+                        <button class="alpha-btn" data-letter="B">B</button>
+                        <button class="alpha-btn" data-letter="C">C</button>
+                        <button class="alpha-btn" data-letter="D">D</button>
+                        <button class="alpha-btn" data-letter="E">E</button>
+                        <button class="alpha-btn" data-letter="F">F</button>
+                        <button class="alpha-btn" data-letter="G">G</button>
+                        <button class="alpha-btn" data-letter="H">H</button>
+                        <button class="alpha-btn" data-letter="I">I</button>
+                        <button class="alpha-btn" data-letter="J">J</button>
+                        <button class="alpha-btn" data-letter="K">K</button>
+                        <button class="alpha-btn" data-letter="L">L</button>
+                        <button class="alpha-btn" data-letter="M">M</button>
+                        <button class="alpha-btn" data-letter="N">N</button>
+                        <button class="alpha-btn" data-letter="O">O</button>
+                        <button class="alpha-btn" data-letter="P">P</button>
+                        <button class="alpha-btn" data-letter="Q">Q</button>
+                        <button class="alpha-btn" data-letter="R">R</button>
+                        <button class="alpha-btn" data-letter="S">S</button>
+                        <button class="alpha-btn" data-letter="T">T</button>
+                        <button class="alpha-btn" data-letter="U">U</button>
+                        <button class="alpha-btn" data-letter="V">V</button>
+                        <button class="alpha-btn" data-letter="W">W</button>
+                        <button class="alpha-btn" data-letter="X">X</button>
+                        <button class="alpha-btn" data-letter="Y">Y</button>
+                        <button class="alpha-btn" data-letter="Z">Z</button>
+                    </div>
+                </div>
+
+                <!-- Browse by Disease -->
+                <div class="disease-section">
+                    <h3 class="mb-20">Browse by <span class="highlight">Disease</span></h3>
+                    <div class="disease-scroll">
+                        <div class="disease-item active" data-cat="all">
+                            <div class="disease-icon-circle"><i class="fas fa-th-large"></i></div>
+                            <span>All</span>
+                        </div>
+                        <div class="disease-item" data-cat="heart">
+                            <div class="disease-icon-circle"><i class="fas fa-heart"></i></div>
+                            <span>Heart</span>
+                        </div>
+                        <div class="disease-item" data-cat="diabetes">
+                            <div class="disease-icon-circle"><i class="fas fa-cube"></i></div>
+                            <span>Diabetes</span>
+                        </div>
+                        <div class="disease-item" data-cat="liver">
+                            <div class="disease-icon-circle"><i class="fas fa-notes-medical"></i></div>
+                            <span>Liver</span>
+                        </div>
+                        <div class="disease-item" data-cat="kidney">
+                            <div class="disease-icon-circle"><i class="fas fa-procedures"></i></div>
+                            <span>Kidney</span>
+                        </div>
+                        <div class="disease-item" data-cat="lung">
+                            <div class="disease-icon-circle"><i class="fas fa-lungs"></i></div>
+                            <span>Lung</span>
+                        </div>
+                        <div class="disease-item" data-cat="bone">
+                            <div class="disease-icon-circle"><i class="fas fa-bone"></i></div>
+                            <span>Bone</span>
+                        </div>
+                        <div class="disease-item" data-cat="fever">
+                            <div class="disease-icon-circle"><i class="fas fa-thermometer-half"></i></div>
+                            <span>Fever</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Test Catalog Grid -->
+                <div class="test-grid-clean" id="main-test-grid">
+                    <!-- Letter A -->
+                    <div class="test-card-simple" data-letter="A" data-cat="liver">
+                        <span class="test-badge">Vital</span>
+                        <div class="test-name">Albumin, Serum</div>
+                        <p class="test-desc">Protein level check to evaluate liver and kidney health.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹350</span>
+                            <button class="add-to-cart btn-mini" data-id="albumin" data-name="Albumin"
+                                data-price="350">Add</button>
+                        </div>
+                    </div>
+                    <div class="test-card-simple" data-letter="A" data-cat="diabetes">
+                        <span class="test-badge">Diabetes</span>
+                        <div class="test-name">Amylase, Serum</div>
+                        <p class="test-desc">Helps diagnose and monitor pancreatitis or pancreatic issues.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹650</span>
+                            <button class="add-to-cart btn-mini" data-id="amylase" data-name="Amylase"
+                                data-price="650">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter B -->
+                    <div class="test-card-simple" data-letter="B" data-cat="liver">
+                        <span class="test-badge">Fast Result</span>
+                        <div class="test-name">Bilirubin (Total, Direct, Indirect)</div>
+                        <p class="test-desc">Helps diagnose liver disease or bile duct blockage.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹400</span>
+                            <button class="add-to-cart btn-mini" data-id="bilirubin" data-name="Bilirubin"
+                                data-price="400">Add</button>
+                        </div>
+                    </div>
+                    <div class="test-card-simple" data-letter="B" data-cat="heart">
+                        <span class="test-badge">Heart</span>
+                        <div class="test-name">BNP (B-type Natriuretic Peptide)</div>
+                        <p class="test-desc">A marker used to detect and evaluate heart failure.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹2,800</span>
+                            <button class="add-to-cart btn-mini" data-id="bnp" data-name="BNP Test"
+                                data-price="2800">Add</button>
+                        </div>
+                    </div>
+
+                    <div class="test-card-simple" data-letter="B" data-cat="ortho">
+                        <span class="test-badge">Ortho</span>
+                        <div class="test-name">Bone Density (DEXA) Screen</div>
+                        <p class="test-desc">Quick bone health check using advanced radiology.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹1,500</span>
+                            <button class="add-to-cart btn-mini" data-id="dexa-lite" data-name="Bone Density"
+                                data-price="1500">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter C -->
+                    <div class="test-card-simple" data-letter="C" data-cat="heart">
+                        <span class="test-badge">Fast Result</span>
+                        <div class="test-name">CBC (Complete Blood Count)</div>
+                        <p class="test-desc">Hb, TLC, DLC, Platelets & 20+ parameters.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹450</span>
+                            <button class="add-to-cart btn-mini" data-id="cbc-clean" data-name="CBC"
+                                data-price="450">Add</button>
+                        </div>
+                    </div>
+                    <div class="test-card-simple" data-letter="C" data-cat="ortho">
+                        <span class="test-badge">Ortho</span>
+                        <div class="test-name">Calcium, Serum</div>
+                        <p class="test-desc">Checks for calcium levels essential for bone health.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹450</span>
+                            <button class="add-to-cart btn-mini" data-id="calcium" data-name="Calcium Test"
+                                data-price="450">Add</button>
+                        </div>
+                    </div>
+                    <div class="test-card-simple" data-letter="C" data-cat="kidney">
+                        <span class="test-badge">Kidney</span>
+                        <div class="test-name">Creatinine, Serum</div>
+                        <p class="test-desc">Essential test to monitor kidney filtering function.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹250</span>
+                            <button class="add-to-cart btn-mini" data-id="creat-serum" data-name="Creatinine"
+                                data-price="250">Add</button>
+                        </div>
+                    </div>
+                    <div class="test-card-simple" data-letter="C" data-cat="fever">
+                        <span class="test-badge">Fever</span>
+                        <div class="test-name">CRP (C-Reactive Protein), Quantitative</div>
+                        <p class="test-desc">Indicates inflammation or infection in the body.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹550</span>
+                            <button class="add-to-cart btn-mini" data-id="crp" data-name="CRP"
+                                data-price="550">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter D -->
+                    <div class="test-card-simple" data-letter="D" data-cat="diabetes">
+                        <span class="test-badge">Diabetes</span>
+                        <div class="test-name">Diabetes Screening Profile</div>
+                        <p class="test-desc">Includes Fasting Sugar, PP Sugar, and HbA1c.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹950</span>
+                            <button class="add-to-cart btn-mini" data-id="diabetes-prof" data-name="Diabetes Profile"
+                                data-price="950">Add</button>
+                        </div>
+                    </div>
+                    <div class="test-card-simple" data-letter="D" data-cat="fever">
+                        <span class="test-badge">New</span>
+                        <div class="test-name">D-Dimer Test</div>
+                        <p class="test-desc">Useful for diagnosing blood clotting disorders.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹1,500</span>
+                            <button class="add-to-cart btn-mini" data-id="d-dimer" data-name="D-Dimer"
+                                data-price="1500">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter E -->
+                    <div class="test-card-simple" data-letter="E" data-cat="heart">
+                        <span class="test-badge">Heart</span>
+                        <div class="test-name">ESR (Erythrocyte Sedimentation Rate)</div>
+                        <p class="test-desc">A general marker for systemic inflammation.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹200</span>
+                            <button class="add-to-cart btn-mini" data-id="esr" data-name="ESR"
+                                data-price="200">Add</button>
+                        </div>
+                    </div>
+                    <div class="test-card-simple" data-letter="E" data-cat="diabetes">
+                        <span class="test-badge">Endocrine</span>
+                        <div class="test-name">Estradiol (E2)</div>
+                        <p class="test-desc">Measures the main form of estrogen in the body.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹850</span>
+                            <button class="add-to-cart btn-mini" data-id="estradiol" data-name="Estradiol"
+                                data-price="850">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter F -->
+                    <div class="test-card-simple" data-letter="F" data-cat="fever">
+                        <span class="test-badge">Fever</span>
+                        <div class="test-name">Ferritin, Serum</div>
+                        <p class="test-desc">Measures the amount of iron stored in your body.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹600</span>
+                            <button class="add-to-cart btn-mini" data-id="ferritin" data-name="Ferritin"
+                                data-price="600">Add</button>
+                        </div>
+                    </div>
+                    <div class="test-card-simple" data-letter="F" data-cat="diabetes">
+                        <span class="test-badge">Diabetes</span>
+                        <div class="test-name">Fasting Blood Sugar (Glucose)</div>
+                        <p class="test-desc">Standard test to screen for prediabetes and diabetes.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹150</span>
+                            <button class="add-to-cart btn-mini" data-id="fbs" data-name="Fasting Sugar"
+                                data-price="150">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter G -->
+                    <div class="test-card-simple" data-letter="G" data-cat="liver">
+                        <span class="test-badge">Liver</span>
+                        <div class="test-name">GGT (Gamma-Glutamyl Transferase)</div>
+                        <p class="test-desc">Sensitive marker for liver or bile duct damage.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹600</span>
+                            <button class="add-to-cart btn-mini" data-id="ggt" data-name="GGT Test"
+                                data-price="600">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter I -->
+                    <div class="test-card-simple" data-letter="I" data-cat="diabetes">
+                        <span class="test-badge">Endocrine</span>
+                        <div class="test-name">Insulin, Fasting</div>
+                        <p class="test-desc">Measures the amount of insulin in your blood after fasting.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹1,200</span>
+                            <button class="add-to-cart btn-mini" data-id="insulin-f" data-name="Insulin Fasting"
+                                data-price="1200">Add</button>
+                        </div>
+                    </div>
+                    <div class="test-card-simple" data-letter="I" data-cat="heart">
+                        <span class="test-badge">Heart</span>
+                        <div class="test-name">INR (International Normalized Ratio)</div>
+                        <p class="test-desc">Monitors the effectiveness of blood-thinning medications.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹450</span>
+                            <button class="add-to-cart btn-mini" data-id="inr" data-name="INR Test"
+                                data-price="450">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter J -->
+                    <div class="test-card-simple" data-letter="J" data-cat="ortho">
+                        <span class="test-badge">Ortho</span>
+                        <div class="test-name">Joint Fluid Analysis</div>
+                        <p class="test-desc">Checks for infection or inflammation in joint fluid.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹1,800</span>
+                            <button class="add-to-cart btn-mini" data-id="joint-fluid" data-name="Joint Fluid Analysis"
+                                data-price="1800">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter H -->
+                    <div class="test-card-simple" data-letter="H" data-cat="diabetes">
+                        <span class="test-badge">Diabetes</span>
+                        <div class="test-name">HbA1c (Glycosylated Hb)</div>
+                        <p class="test-desc">Average blood sugar level over 3 months.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹650</span>
+                            <button class="add-to-cart btn-mini" data-id="hba1c" data-name="HbA1c"
+                                data-price="650">Add</button>
+                        </div>
+                    </div>
+                    <div class="test-card-simple" data-letter="H" data-cat="heart">
+                        <span class="test-badge">Heart</span>
+                        <div class="test-name">Homocysteine, Serum</div>
+                        <p class="test-desc">High levels are associated with increased risk of heart disease.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹1,200</span>
+                            <button class="add-to-cart btn-mini" data-id="homocysteine" data-name="Homocysteine"
+                                data-price="1200">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter K (Kidney Focus) -->
+                    <div class="test-card-simple" data-letter="K" data-cat="kidney">
+                        <span class="test-badge">Kidney</span>
+                        <div class="test-name">Kidney Function Test (KFT)</div>
+                        <p class="test-desc">Includes Urea, Creatinine, Uric Acid, Electrolytes.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹850</span>
+                            <button class="add-to-cart btn-mini" data-id="kft" data-name="KFT"
+                                data-price="850">Add</button>
+                        </div>
+                    </div>
+                    <div class="test-card-simple" data-letter="K" data-cat="kidney">
+                        <span class="test-badge">Micro</span>
+                        <div class="test-name">Microalbumin, Urine</div>
+                        <p class="test-desc">Early indicator of kidney damage, especially in diabetes.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹750</span>
+                            <button class="add-to-cart btn-mini" data-id="microalb" data-name="Microalbumin"
+                                data-price="750">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter K -->
+                    <div class="test-card-simple" data-letter="K" data-cat="kidney">
+                        <span class="test-badge">Kidney</span>
+                        <div class="test-name">Potassium, Serum</div>
+                        <p class="test-desc">Checks for electrolyte balance relevant to kidney health.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹300</span>
+                            <button class="add-to-cart btn-mini" data-id="potassium-kid" data-name="Potassium"
+                                data-price="300">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter L -->
+                    <div class="test-card-simple" data-letter="L" data-cat="heart">
+                        <span class="test-badge">Vital</span>
+                        <div class="test-name">Lipid Profile</div>
+                        <p class="test-desc">Total Cholesterol, HDL, LDL, Triglycerides.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹800</span>
+                            <button class="add-to-cart btn-mini" data-id="lipid-clean" data-name="Lipid Profile"
+                                data-price="800">Add</button>
+                        </div>
+                    </div>
+                    <div class="test-card-simple" data-letter="L" data-cat="liver">
+                        <span class="test-badge">Vital</span>
+                        <div class="test-name">Liver Function Test (LFT)</div>
+                        <p class="test-desc">Includes SGOT, SGPT, Bilirubin, Protein.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹750</span>
+                            <button class="add-to-cart btn-mini" data-id="lft" data-name="LFT"
+                                data-price="750">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter M -->
+                    <div class="test-card-simple" data-letter="M" data-cat="fever">
+                        <span class="test-badge">Fever</span>
+                        <div class="test-name">Malaria (Rapid Card Test)</div>
+                        <p class="test-desc">Rapid detection of Vivax and Falciparum malaria.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹350</span>
+                            <button class="add-to-cart btn-mini" data-id="malaria" data-name="Malaria Test"
+                                data-price="350">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter N -->
+                    <div class="test-card-simple" data-letter="N" data-cat="fever">
+                        <span class="test-badge">New</span>
+                        <div class="test-name">NS1 Antigen (Dengue)</div>
+                        <p class="test-desc">Rapid test for early detection of Dengue fever.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹950</span>
+                            <button class="add-to-cart btn-mini" data-id="ns1-dengue" data-name="NS1 Dengue"
+                                data-price="950">Add</button>
+                        </div>
+                    </div>
+                    <div class="test-card-simple" data-letter="N" data-cat="heart">
+                        <span class="test-badge">Advanced</span>
+                        <div class="test-name">NT-ProBNP</div>
+                        <p class="test-desc">Advanced cardiac marker for detecting heart failure.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹3,500</span>
+                            <button class="add-to-cart btn-mini" data-id="nt-probnp" data-name="NT-ProBNP"
+                                data-price="3500">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter O -->
+                    <div class="test-card-simple" data-letter="O" data-cat="ortho">
+                        <span class="test-badge">Ortho</span>
+                        <div class="test-name">Osteocalcin</div>
+                        <p class="test-desc">A marker used to evaluate bone formation and bone health.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹2,400</span>
+                            <button class="add-to-cart btn-mini" data-id="osteocalcin" data-name="Osteocalcin"
+                                data-price="2400">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter P -->
+                    <div class="test-card-simple" data-letter="P" data-cat="heart">
+                        <span class="test-badge">Heart</span>
+                        <div class="test-name">Potassium, Serum</div>
+                        <p class="test-desc">Checks for electrolyte balance relevant to heart rhythm.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹300</span>
+                            <button class="add-to-cart btn-mini" data-id="potassium" data-name="Potassium"
+                                data-price="300">Add</button>
+                        </div>
+                    </div>
+                    <div class="test-card-simple" data-letter="P" data-cat="kidney">
+                        <span class="test-badge">Kidney</span>
+                        <div class="test-name">Phosphorus, Serum</div>
+                        <p class="test-desc">Essential for evaluating kidney and bone health.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹350</span>
+                            <button class="add-to-cart btn-mini" data-id="phosphorus" data-name="Phosphorus"
+                                data-price="350">Add</button>
+                        </div>
+                    </div>
+                    <div class="test-card-simple" data-letter="P" data-cat="ortho">
+                        <span class="test-badge">Bone</span>
+                        <div class="test-name">PTH (Parathyroid Hormone)</div>
+                        <p class="test-desc">Regulates calcium levels in the blood and bone.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹1,600</span>
+                            <button class="add-to-cart btn-mini" data-id="pth" data-name="PTH Test"
+                                data-price="1600">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter Q -->
+                    <div class="test-card-simple" data-letter="Q" data-cat="heart">
+                        <span class="test-badge">Vital</span>
+                        <div class="test-name">Quick PT/INR</div>
+                        <p class="test-desc">Rapid monitoring for patients on anticoagulant therapy.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹600</span>
+                            <button class="add-to-cart btn-mini" data-id="quick-pt" data-name="Quick PT/INR"
+                                data-price="600">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter R -->
+                    <div class="test-card-simple" data-letter="R" data-cat="ortho">
+                        <span class="test-badge">Ortho</span>
+                        <div class="test-name">Rheumatoid Factor (RA Factor)</div>
+                        <p class="test-desc">Screening for rheumatoid arthritis and joint inflammation.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹650</span>
+                            <button class="add-to-cart btn-mini" data-id="ra-factor" data-name="RA Factor"
+                                data-price="650">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter S -->
+                    <div class="test-card-simple" data-letter="S" data-cat="diabetes">
+                        <span class="test-badge">Fast Result</span>
+                        <div class="test-name">Sugar (Blood Glucose) Fasting</div>
+                        <p class="test-desc">Standard screening for diabetes management.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹150</span>
+                            <button class="add-to-cart btn-mini" data-id="sugar-f" data-name="Sugar Fasting"
+                                data-price="150">Add</button>
+                        </div>
+                    </div>
+                    <div class="test-card-simple" data-letter="S" data-cat="diabetes">
+                        <span class="test-badge">Fast Result</span>
+                        <div class="test-name">Sugar (Blood Glucose) Post Prandial</div>
+                        <p class="test-desc">Sugar level 2 hours after a meal.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹150</span>
+                            <button class="add-to-cart btn-mini" data-id="sugar-pp" data-name="Sugar PP"
+                                data-price="150">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter T -->
+                    <div class="test-card-simple" data-letter="T" data-cat="diabetes">
+                        <span class="test-badge">Best Seller</span>
+                        <div class="test-name">Thyroid Profile (T3, T4, TSH)</div>
+                        <p class="test-desc">Screening for thyroid gland function.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹550</span>
+                            <button class="add-to-cart btn-mini" data-id="thyroid" data-name="Thyroid Profile"
+                                data-price="550">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter V -->
+                    <div class="test-card-simple" data-letter="S" data-cat="kidney">
+                        <span class="test-badge">Kidney</span>
+                        <div class="test-name">Serum Electrolytes (Na, K, Cl)</div>
+                        <p class="test-desc">Critical for monitoring kidney function and fluid balance.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹750</span>
+                            <button class="add-to-cart btn-mini" data-id="electrolytes" data-name="Electrolytes"
+                                data-price="750">Add</button>
+                        </div>
+                    </div>
+                    <div class="test-card-simple" data-letter="T" data-cat="heart">
+                        <span class="test-badge">Vital</span>
+                        <div class="test-name">Troponin-I</div>
+                        <p class="test-desc">High sensitivity cardiac marker for heart muscle health.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹1,800</span>
+                            <button class="add-to-cart btn-mini" data-id="troponin" data-name="Troponin-I"
+                                data-price="1800">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter U -->
+                    <div class="test-card-simple" data-letter="U" data-cat="bone">
+                        <span class="test-badge">Bone</span>
+                        <div class="test-name">Uric Acid, Serum</div>
+                        <p class="test-desc">Checks for gout and kidney stones.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹250</span>
+                            <button class="add-to-cart btn-mini" data-id="uric-acid" data-name="Uric Acid"
+                                data-price="250">Add</button>
+                        </div>
+                    </div>
+                    <div class="test-card-simple" data-letter="U" data-cat="fever">
+                        <span class="test-badge">Vital</span>
+                        <div class="test-name">Urine Routine & Microscopy</div>
+                        <p class="test-desc">Detailed screening of physical & chemical urine properties.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹200</span>
+                            <button class="add-to-cart btn-mini" data-id="urine-rm" data-name="Urine R/M"
+                                data-price="200">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter V -->
+                    <div class="test-card-simple" data-letter="V" data-cat="bone">
+                        <span class="test-badge">Trending</span>
+                        <div class="test-name">Vitamin D (25-Hydroxy)</div>
+                        <p class="test-desc">Checks for vitamin D deficiency for bone health.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹1,100</span>
+                            <button class="add-to-cart btn-mini" data-id="vit-d" data-name="Vitamin D"
+                                data-price="1100">Add</button>
+                        </div>
+                    </div>
+                    <div class="test-card-simple" data-letter="V" data-cat="heart">
+                        <span class="test-badge">Vital</span>
+                        <div class="test-name">Vitamin B12</div>
+                        <p class="test-desc">Essential for nerve health and red blood cell formation.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹850</span>
+                            <button class="add-to-cart btn-mini" data-id="vit-b12" data-name="Vitamin B12"
+                                data-price="850">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter W -->
+                    <div class="test-card-simple" data-letter="W" data-cat="fever">
+                        <span class="test-badge">New</span>
+                        <div class="test-name">Widal (Typhoid) Test</div>
+                        <p class="test-desc">Diagnostic test for typhoid fever detection.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹400</span>
+                            <button class="add-to-cart btn-mini" data-id="widal" data-name="Widal Test"
+                                data-price="400">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Letter Z -->
+                    <div class="test-card-simple" data-letter="Z" data-cat="fever">
+                        <span class="test-badge">Vital</span>
+                        <div class="test-name">Zinc, Serum</div>
+                        <p class="test-desc">Essential trace element for immune system support.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹1,500</span>
+                            <button class="add-to-cart btn-mini" data-id="zinc" data-name="Zinc Test"
+                                data-price="1500">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-40" style="margin-top: 30px;">
+                    <button class="btn-outline">View All 1000+ Tests</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Bifurcation -->
+        <section class="service-bifurcation py-60">
+            <div class="container">
+                <div class="service-split-grid">
+                    <a href="#tests" class="service-big-card">
+                        <div class="card-icon"><i class="fas fa-microscope"></i></div>
+                        <div class="card-text">
+                            <h2>Laboratory Services</h2>
+                            <p>Blood tests, Biopsies, and Pathology services with NABL accreditation.</p>
+                        </div>
+                    </a>
+                    <a href="#appointment" class="service-big-card">
+                        <div class="card-icon"><i class="fas fa-x-ray"></i></div>
+                        <div class="card-text">
+                            <h2>Radiology Services</h2>
+                            <p>MRI, CT Scan, X-Ray, and Ultrasound with high-end digital imaging.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Health Packages -->
+        <section class="packages-section" id="packages">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Exclusive <span class="highlight">Health Packages</span></h2>
+                </div>
+                <div class="test-grid-clean">
+                    <!-- Using the same clean grid but for packages -->
+                    <div class="test-card-simple" style="border-top: 4px solid var(--accent-color);">
+                        <span class="test-badge" style="background: var(--accent-color); color: #fff;">Popular</span>
+                        <div class="test-name">Master Health Check</div>
+                        <p class="test-desc">Comprehensive screening including heart, liver, kidney & more (65+ tests).
+                        </p>
+                        <div class="test-footer">
+                            <span class="test-price">₹2,999</span>
+                            <button class="add-to-cart btn-mini" data-id="master-pkg-clean"
+                                data-name="Master Health Check" data-price="2999">Add</button>
+                        </div>
+                    </div>
+                    <div class="test-card-simple">
+                        <span class="test-badge">Essential</span>
+                        <div class="test-name">Women Wellness Package</div>
+                        <p class="test-desc">Tailored for women's hormonal health, anemia & bone screening.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹1,999</span>
+                            <button class="add-to-cart btn-mini" data-id="women-well-clean" data-name="Women Wellness"
+                                data-price="1999">Add</button>
+                        </div>
+                    </div>
+                    <div class="test-card-simple">
+                        <span class="test-badge">Senior Special</span>
+                        <div class="test-name">Cardiac Risk Profile</div>
+                        <p class="test-desc">Focused screening for heart health and lipid markers.</p>
+                        <div class="test-footer">
+                            <span class="test-price">₹1,499</span>
+                            <button class="add-to-cart btn-mini" data-id="cardiac-profile" data-name="Cardiac Profile"
+                                data-price="1499">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-40" style="margin-top: 40px;">
+                    <button class="btn-primary health-nav-trigger">View Special Packages</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Appointment Section -->
+        <section class="appointment-section" id="appointment">
+            <div class="container">
+                <div class="appointment-container">
+                    <div class="appointment-info">
+                        <h2>Book Your <span class="highlight">Appointment</span></h2>
+                        <p>Skip the queue by booking your diagnostic test or health checkup online. Choose home
+                            collection or visit our center.</p>
+                        <div class="info-list">
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fas fa-user-clock"></i></div>
+                                <div>
+                                    <h4>Priority Access</h4>
+                                    <p>Get priority service and minimal wait time.</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fas fa-vial"></i></div>
+                                <div>
+                                    <h4>Sample History</h4>
+                                    <p>Track your test history and reports online.</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fas fa-file-invoice"></i></div>
+                                <div>
+                                    <h4>Instant Invoicing</h4>
+                                    <p>Get digital receipts instantly on your phone.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="appointment-form-wrapper">
+                        <form id="appointment-form">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <input type="text" placeholder="John Doe" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="tel" placeholder="+91 98765 43210" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Service Type</label>
+                                    <select required>
+                                        <option value="">Select Service</option>
+                                        <option value="lab">Laboratory</option>
+                                        <option value="radiology">Radiology</option>
+                                        <option value="health">Health Checkup</option>
+                                    </select>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label>Preferred Date</label>
+                                    <div class="slot-selector" id="date-slots">
+                                        <div class="slot-chip active" data-date="today">Today</div>
+                                        <div class="slot-chip" data-date="tomorrow">Tomorrow</div>
+                                        <div class="slot-chip" data-date="custom">Select Date</div>
+                                    </div>
+                                    <input type="date" id="appointment-date" style="display: none;" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group visit-type-wrapper">
+                                <label>Visit Type</label>
+                                <div class="visit-toggle" id="visit-type-toggle">
+                                    <div class="toggle-switch"></div>
+                                    <div class="toggle-option active" data-visit="center">At Clinic</div>
+                                    <div class="toggle-option" data-visit="home">Home Visit</div>
+                                </div>
+                            </div>
+                            <div class="form-group" id="address-field" style="display: none;">
+                                <label>Full Address</label>
+                                <textarea placeholder="Enter your full address for collection..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit">Confirm Booking</button>
+                        </form>
+                        <div id="appointment-success" style="display: none;" class="text-center py-40">
+                            <div class="success-icon mb-20"><i class="fas fa-check-circle fa-4x text-success"></i></div>
+                            <h3>Appointment Requested!</h3>
+                            <p class="mb-30">We have received your request. Our representative will call you shortly to
+                                confirm the slot.</p>
+                            <div class="flex-center gap-15">
+                                <button class="btn-primary home-nav-trigger">Back to Home</button>
+                                <button class="btn-outline" id="download-appointment-report"><i
+                                        class="fas fa-file-download"></i> Download Report</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prescription Upload -->
+        <section class="prescription-section" id="prescription">
+            <div class="container">
+                <div class="prescription-card">
+                    <div class="prescription-icon">
+                        <i class="fas fa-prescription"></i>
+                    </div>
+                    <h2>Upload Prescription</h2>
+                    <p>Already have a prescription? Upload it here and we'll help you book the right tests.</p>
+                    <div class="upload-area" id="drop-zone">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drag & Drop your prescription (PDF/Image) or <span>Browse</span></p>
+                        <input type="file" id="file-input" hidden>
+                    </div>
+                    <div id="file-preview" class="file-preview"></div>
+                    <button class="btn-primary" id="upload-btn">Upload & Continue</button>
+                    <div id="prescription-success" class="success-msg" style="display: none;">
+                        <i class="fas fa-paper-plane"></i>
+                        <h3>Prescription Received!</h3>
+                        <p>We've received your prescription. Our team will contact you within 15 minutes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Doctors Section -->
+        <section class="doctors-section" id="doctors">
+            <div class="container">
+                <h2 class="section-title text-center">Meet Our Specialists</h2>
+                <div class="doctors-grid">
+                    <div class="doctor-card">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800&auto=format&fit=crop"
+                            alt="Dr. Rajesh Kumar">
+                        <div class="doctor-details">
+                            <h3>Dr. Rajesh Kumar</h3>
+                            <p class="specialty">Consultant Radiologist</p>
+                            <p class="experience">15+ Years Experience</p>
+                            <p class="qual">MD, Radiology (AIIMS)</p>
+                            <a href="#appointment" class="btn-outline home-nav-trigger">Book Appointment</a>
+                        </div>
+                    </div>
+                    <div class="doctor-card">
+                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=800&auto=format&fit=crop"
+                            alt="Dr. Shalini Singh">
+                        <div class="doctor-details">
+                            <h3>Dr. Shalini Singh</h3>
+                            <p class="specialty">Pathologist</p>
+                            <p class="experience">12+ Years Experience</p>
+                            <p class="qual">MD, Pathology (JIPMER)</p>
+                            <a href="#appointment" class="btn-outline home-nav-trigger">Book Appointment</a>
+                        </div>
+                    </div>
+                    <div class="doctor-card">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=800&auto=format&fit=crop"
+                            alt="Dr. Amit Sharma">
+                        <div class="doctor-details">
+                            <h3>Dr. Amit Sharma</h3>
+                            <p class="specialty">Cardiologist</p>
+                            <p class="experience">20+ Years Experience</p>
+                            <p class="qual">DM, Cardiology</p>
+                            <a href="#appointment" class="btn-outline home-nav-trigger">Book Appointment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="container about-grid">
+                <div class="about-image">
+                    <img src="assets/lab-test.png" alt="Our Laboratory">
+                </div>
+                <div class="about-content">
+                    <h2 class="section-title">Why Choose <br><span class="highlight">Vijaya Diagnostics?</span></h2>
+                    <p>With over 40 years of service, we've become India's largest comprehensive diagnostic network. Our
+                        commitment to accuracy, technology, and patient care is unparalleled.</p>
+                    <ul class="why-list">
+                        <li><i class="fas fa-check-circle"></i> <strong>NABL & NABH Accredited:</strong> Quality
+                            standards you can trust.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Advanced Technology:</strong> 3T MRI, 128 Slice
+                            CT, and fully automated labs.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Home Sample Collection:</strong> Convenience at
+                            your doorstep.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>100% Digital Reports:</strong> Instant access to
+                            results via WhatsApp & Email.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Verified Specialists:</strong> Our reports are
+                            validated by senior pathologists.</li>
+                    </ul>
+                    <button class="btn-primary">Learn More About Us</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="container contact-grid">
+                <div class="contact-form">
+                    <h2>Get in Touch</h2>
+                    <form id="contact-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="tel" placeholder="Your Phone" required>
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info-panel">
+                    <div class="info-block">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Main Center</h3>
+                            <p>Plot No. 12, Road No. 1, Banjara Hills, Hyderabad, Telangana 500034</p>
+                        </div>
+                    </div>
+                    <div class="info-block">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Call Us</h3>
+                            <p>+91 40 2345 6789 <br> 1800 123 4567 (Toll Free)</p>
+                        </div>
+                    </div>
+                    <div class="info-block">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email Us</h3>
+                            <p>info@vijayadiagnostics.com <br> support@vijayadiagnostics.com</p>
+                        </div>
+                    </div>
+                    <div class="map-placeholder">
+                        <i class="fas fa-map"></i>
+                        <p>Map Placeholder - Banjara Hills Location</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blogs & Health Tips -->
+        <section class="blogs-section" id="blogs">
+            <div class="container">
+                <h2 class="section-title text-center">Health Tips & <span class="highlight">Blogs</span></h2>
+                <div class="blogs-grid">
+                    <article class="blog-card">
+                        <div class="blog-img">
+                            <img src="assets/lab-test.png" alt="Healthy Heart">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-date">Jan 10, 2026</span>
+                            <h4>10 Tips for a Healthy Heart in 2026</h4>
+                            <p>Learn how simple lifestyle changes can significantly improve your cardiovascular
+                                health...</p>
+                            <a href="#" class="btn-text">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="blog-card">
+                        <div class="blog-img">
+                            <img src="assets/radiology.png" alt="Radiology Prep">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-date">Jan 08, 2026</span>
+                            <h4>How to Prepare for Your MRI Scan</h4>
+                            <p>Everything you need to know before stepping into the radiology department for your MRI...
+                            </p>
+                            <a href="#" class="btn-text">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="blog-card">
+                        <div class="blog-img">
+                            <img src="assets/lab-test.png" alt="Diabetes Stats">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-date">Jan 05, 2026</span>
+                            <h4>Understanding Your Blood Sugar Levels</h4>
+                            <p>A comprehensive guide to interpreting your lab results and managing diabetes
+                                effectively...</p>
+                            <a href="#" class="btn-text">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recognitions & Awards -->
+        <section class="recognitions-section">
+            <div class="container">
+                <div class="recognitions-flex">
+                    <div class="recognition-item">
+                        <img src="https://www.vijayadiagnostic.com/_next/image?url=%2Fabout%2Fnabl.png&w=128&q=75"
+                            alt="NABL">
+                        <p>NABL Accredited</p>
+                    </div>
+                    <div class="recognition-item">
+                        <img src="https://www.vijayadiagnostic.com/_next/image?url=%2Fabout%2Fnabh.png&w=128&q=75"
+                            alt="NABH">
+                        <p>NABH Accredited</p>
+                    </div>
+                    <div class="recognition-item">
+                        <i class="fas fa-award"></i>
+                        <p>Best Diagnostic Chain 2023</p>
+                    </div>
+                    <div class="recognition-item">
+                        <i class="fas fa-certificate"></i>
+                        <p>ISO 9001:2015 Certified</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title text-center">Frequently Asked Questions</h2>
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <div class="faq-question">What are the home sample collection timings? <i
+                                class="fas fa-plus"></i></div>
+                        <div class="faq-answer">Home sample collection is available from 6:30 AM to 8:00 PM on all days.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I download my diagnostic reports? <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">You can download reports from the 'Download Reports' section using your
+                            registered phone number.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Is fasting required for blood tests? <i class="fas fa-plus"></i></div>
+                        <div class="faq-answer">For certain tests like Diabetes Profile or Lipid Profile, 10-12 hours of
+                            fasting is recommended.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Health Checkups Page (SPA Hidden Section) -->
+    <div id="health-checkups-page" style="display: none;">
+        <section class="page-hero health-hero">
+            <div class="container">
+                <h1>Comprehensive <span class="highlight">Health Checkups</span></h1>
+                <p>Preventive healthcare packages for you and your family.</p>
+            </div>
+        </section>
+
+        <section class="health-packages-full">
+            <div class="container">
+                <div class="filters-bar text-center">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Men</button>
+                    <button class="filter-btn">Women</button>
+                    <button class="filter-btn">Senior Citizens</button>
+                    <button class="filter-btn">Cardiac</button>
+                </div>
+
+                <div class="packages-grid" id="main-packages-grid">
+                    <div class="package-card featured" data-type="full-body">
+                        <div class="package-tag">Best Value</div>
+                        <div class="package-header">
+                            <h3>Master Health Checkup</h3>
+                            <p>Comprehensive screening for vital organs and blood parameters.</p>
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 80+ Parameters Included</li>
+                                <li><i class="fas fa-check"></i> Complete Hemogram</li>
+                                <li><i class="fas fa-check"></i> Liver & Kidney Profile</li>
+                                <li><i class="fas fa-check"></i> Lipid & Thyroid Profile</li>
+                                <li><i class="fas fa-check"></i> Vitamin D & B12</li>
+                            </ul>
+                        </div>
+                        <div class="package-footer">
+                            <div class="price-box">
+                                <span class="current-price">₹2,499</span>
+                            </div>
+                            <button class="add-to-cart btn-primary w-full" data-id="pkg-master"
+                                data-name="Master Health" data-price="2499">Book Now</button>
+                        </div>
+                    </div>
+
+                    <div class="package-card" data-type="women">
+                        <div class="package-header">
+                            <h3>Well Women Package</h3>
+                            <p>Specially curated for women's hormonal and bone health.</p>
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Full Body Screening</li>
+                                <li><i class="fas fa-check"></i> Iron Studies</li>
+                                <li><i class="fas fa-check"></i> Calcium & Bone Health</li>
+                                <li><i class="fas fa-check"></i> Vitamin D screening</li>
+                                <li><i class="fas fa-check"></i> PCOS Screening (Optional)</li>
+                            </ul>
+                        </div>
+                        <div class="package-footer">
+                            <div class="price-box">
+                                <span class="current-price">₹1,999</span>
+                            </div>
+                            <button class="add-to-cart btn-primary w-full" data-id="pkg-women" data-name="Well Women"
+                                data-price="1999">Book Now</button>
+                        </div>
+                    </div>
+
+                    <div class="package-card" data-type="senior">
+                        <div class="package-header">
+                            <h3>Senior Citizen Care</h3>
+                            <p>Focused on age-related health markers for elderly care.</p>
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Cardiac Risk Markers</li>
+                                <li><i class="fas fa-check"></i> Joint & Bone Screening</li>
+                                <li><i class="fas fa-check"></i> Prostate (PSA) for Men</li>
+                                <li><i class="fas fa-check"></i> HbA1c & KFT</li>
+                                <li><i class="fas fa-check"></i> Physician Consultation</li>
+                            </ul>
+                        </div>
+                        <div class="package-footer">
+                            <div class="price-box">
+                                <span class="old-price">₹4,200</span>
+                                <span class="current-price">₹2,750</span>
+                            </div>
+                            <button class="add-to-cart btn-primary w-full" data-id="pkg-senior" data-name="Senior Care"
+                                data-price="2750">Book Now</button>
+                        </div>
+                    </div>
+
+                    <div class="package-card" data-type="kids">
+                        <div class="package-header">
+                            <h3>Healthy Kids Package</h3>
+                            <p>Ensuring your child's growth and nutritional balance.</p>
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> CBC & Blood Group</li>
+                                <li><i class="fas fa-check"></i> Growth Hormone (Optional)</li>
+                                <li><i class="fas fa-check"></i> Calcium & Iron levels</li>
+                                <li><i class="fas fa-check"></i> Vitamin B12 & D</li>
+                                <li><i class="fas fa-check"></i> Stool & Urine Check</li>
+                            </ul>
+                        </div>
+                        <div class="package-footer">
+                            <div class="price-box">
+                                <span class="old-price">₹2,000</span>
+                                <span class="current-price">₹999</span>
+                            </div>
+                            <button class="add-to-cart btn-primary w-full" data-id="pkg-kids" data-name="Healthy Kids"
+                                data-price="999">Book Now</button>
+                        </div>
+                    </div>
+
+                    <div class="package-card" data-type="executive">
+                        <div class="package-header">
+                            <h3>Executive Full Body</h3>
+                            <p>Premium 100+ parameter screening for busy professionals.</p>
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 110+ Parameters</li>
+                                <li><i class="fas fa-check"></i> Comprehensive Lipid</li>
+                                <li><i class="fas fa-check"></i> Cancer Markers Screening</li>
+                                <li><i class="fas fa-check"></i> Stress Management Markers</li>
+                                <li><i class="fas fa-check"></i> Dietitian Counseling</li>
+                            </ul>
+                        </div>
+                        <div class="package-footer">
+                            <div class="price-box">
+                                <span class="old-price">₹7,500</span>
+                                <span class="current-price">₹3,999</span>
+                            </div>
+                            <button class="add-to-cart btn-primary w-full" data-id="pkg-exec"
+                                data-name="Executive Full Body" data-price="3999">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Account Modals -->
+    <!-- About Us Page (SPA Hidden Section) -->
+    <div id="about-us-page" style="display: none;">
+        <section class="page-hero about-hero">
+            <div class="container">
+                <h1>Our <span class="highlight">Vision & Mission</span></h1>
+                <p>Providing world-class diagnostic services with accuracy and care since 1981.</p>
+            </div>
+        </section>
+
+        <section class="about-content py-80">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2 class="mb-20">A Legacy of <span class="highlight">Trust</span></h2>
+                        <p class="mb-20">Founded with a vision to provide accurate and affordable diagnostic services,
+                            Vijaya Diagnostics has grown into a leading healthcare provider. With over 140+ centers
+                            across India, we are committed to clinical excellence and patient-centric care.</p>
+                        <p class="mb-30">Our state-of-the-art laboratories are equipped with the latest technology,
+                            ensuring precise results and a seamless experience for every patient.</p>
+
+                        <div class="stats-row">
+                            <div class="stat-box">
+                                <h3>40+</h3>
+                                <p>Years of Experience</p>
+                            </div>
+                            <div class="stat-box">
+                                <h3>140+</h3>
+                                <p>Centers Pan India</p>
+                            </div>
+                            <div class="stat-box">
+                                <h3>5000+</h3>
+                                <p>Tests Performed Daily</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-visual">
+                        <div class="glass-card about-image-card">
+                            <img src="assets/professional-doctor-1_1768030320608.png" alt="Our Team" class="br-20">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="values-section py-80 bg-light">
+            <div class="container">
+                <h2 class="section-title text-center">Our Core <span class="highlight">Values</span></h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-bullseye"></i></div>
+                        <h3>Accuracy</h3>
+                        <p>We believe in providing the most precise results through rigorous quality controls and
+                            advanced robotics.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-heart"></i></div>
+                        <h3>Compassion</h3>
+                        <p>Our phlebotomists and staff are trained to handle every patient with empathy and professional
+                            care.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-microscope"></i></div>
+                        <h3>Innovation</h3>
+                        <p>Continuously investing in the latest diagnostic technologies to stay ahead in patient care.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section py-80">
+            <div class="container">
+                <h2 class="section-title text-center">Meet Our <span class="highlight">Leadership</span></h2>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-img-wrapper">
+                            <img src="assets/professional-doctor-1_1768030320608.png" alt="Dr. S. Surendranath Reddy">
+                        </div>
+                        <div class="team-info">
+                            <h4>Dr. S. Surendranath Reddy</h4>
+                            <p>Founder & Executive Chairman</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-img-wrapper">
+                            <img src="assets/doctor-1.png" alt="Ms. Sura Suprita Reddy">
+                        </div>
+                        <div class="team-info">
+                            <h4>Ms. Sura Suprita Reddy</h4>
+                            <p>Managing Director & CEO</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Login/Signup Glassmorphism Redesign Container -->
+    <div id="auth-redesign-styles" style="display: none;"></div>
+
+    <div class="modal-overlay" id="login-modal">
+        <div class="modal-content glass">
+            <i class="fas fa-times modal-close"></i>
+            <div class="text-center mb-30">
+                <h2 class="mb-10">Welcome Back</h2>
+                <p>Log in to access your health reports</p>
+            </div>
+
+            <div class="social-login">
+                <button class="social-btn google-login-btn"><i class="fab fa-google"></i> Google</button>
+                <button class="social-btn"><i class="fab fa-facebook-f"></i> Facebook</button>
+            </div>
+
+            <div class="divider">OR</div>
+
+            <form id="login-form">
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required class="glass-input">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required class="glass-input">
+                </div>
+                <div class="text-right mb-20">
+                    <a href="#" class="forgot-pass">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn-submit pulse-primary">Log In</button>
+                <p class="modal-footer mt-20">Don't have an account? <a href="#" id="switch-to-signup">Create
+                        Account</a></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="signup-modal">
+        <div class="modal-content glass">
+            <i class="fas fa-times modal-close"></i>
+            <div class="text-center mb-30">
+                <h2 class="mb-10">Join Us</h2>
+                <p>Create an account for personalized health tracking</p>
+            </div>
+
+            <div class="social-login">
+                <button class="social-btn google-login-btn"><i class="fab fa-google"></i> Google</button>
+                <button class="social-btn"><i class="fab fa-facebook-f"></i> Facebook</button>
+            </div>
+
+            <div class="divider">OR</div>
+
+            <form id="signup-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name" required class="glass-input">
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required class="glass-input">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Create Password" required class="glass-input">
+                </div>
+                <div class="checkbox-group mb-20">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree to the Terms & Conditions</label>
+                </div>
+                <button type="submit" class="btn-submit pulse-primary">Sign Up</button>
+                <p class="modal-footer mt-20">Already have an account? <a href="#" id="switch-to-login">Log In</a></p>
+            </form>
+        </div>
+    </div>
+
+    </footer>
+
+    <!-- Tests at Centres Page (SPA) -->
+    <div id="centre-tests-page" style="display: none;">
+        <section class="centre-tests-hero">
+            <div class="container text-center">
+                <h2>Tests at <span class="highlight">Centres</span></h2>
+                <p>Specialized diagnostic procedures requiring advanced medical infrastructure.</p>
+                <div class="hc-filters-premium">
+                    <div class="organ-item active" data-centre="all">
+                        <div class="organ-icon"><i class="fas fa-microscope"></i></div>
+                        <span>All Specialized</span>
+                    </div>
+                    <div class="organ-item" data-centre="heart">
+                        <div class="organ-icon"><i class="fas fa-heartbeat"></i></div>
+                        <span>Heart (Echo/TMT)</span>
+                    </div>
+                    <div class="organ-item" data-centre="neuro">
+                        <div class="organ-icon"><i class="fas fa-brain"></i></div>
+                        <span>Neuro (EEG/EMG)</span>
+                    </div>
+                    <div class="organ-item" data-centre="ortho">
+                        <div class="organ-icon"><i class="fas fa-bone"></i></div>
+                        <span>Ortho (DEXA)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="centre-catalog">
+            <div class="container">
+                <div class="tests-grid-premium" id="centre-dynamic-grid">
+                    <div class="premium-test-card" data-centre="heart">
+                        <div class="discount-badge">SAVE 40%</div>
+                        <div class="card-status status-vital">Premium Exclusive</div>
+                        <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
+                        <h3>Comprehensive Heart Check</h3>
+                        <p>Includes Cardiac MRI, 2D Echo, Stress Test & Lipid Profile.</p>
+                        <div class="card-action">
+                            <div class="price-container">
+                                <span class="old-price-line">₹12,400</span>
+                                <span class="price">₹7,440</span>
+                            </div>
+                            <button class="add-to-cart btn-mini" data-id="heart-premium" data-name="Premium Heart Check"
+                                data-price="7440">Add</button>
+                        </div>
+                    </div>
+                    <!-- Heart Centre Tests -->
+                    <div class="premium-test-card" data-centre="heart">
+                        <div class="card-status status-vital">Centre Exclusive</div>
+                        <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
+                        <h3>2D Echo</h3>
+                        <p>Advanced ultrasound mapping of heart structure and blood flow.</p>
+                        <div class="card-action">
+                            <span class="price">₹2,500</span>
+                            <button class="add-to-cart btn-mini" data-id="2d-echo" data-name="2D Echo"
+                                data-price="2500">Add</button>
+                        </div>
+                    </div>
+                    <div class="premium-test-card" data-centre="heart">
+                        <div class="card-status status-fast">Centre Exclusive</div>
+                        <div class="card-icon"><i class="fas fa-running"></i></div>
+                        <h3>TMT (Stress Test)</h3>
+                        <p>Monitoring heart performance under physical stress.</p>
+                        <div class="card-action">
+                            <span class="price">₹1,800</span>
+                            <button class="add-to-cart btn-mini" data-id="tmt-stress" data-name="TMT Stress Test"
+                                data-price="1800">Add</button>
+                        </div>
+                    </div>
+
+                    <div class="premium-test-card" data-centre="all">
+                        <div class="discount-badge">SAVE 30%</div>
+                        <div class="card-status status-vital">Advanced Imaging</div>
+                        <div class="card-icon"><i class="fas fa-microscope"></i></div>
+                        <h3>Whole Body MRI (3T)</h3>
+                        <p>High-resolution full-body screening for early detection of abnormalities.</p>
+                        <div class="card-action">
+                            <div class="price-container">
+                                <span class="old-price-line">₹25,000</span>
+                                <span class="price">₹17,500</span>
+                            </div>
+                            <button class="add-to-cart btn-mini" data-id="body-mri" data-name="Whole Body MRI"
+                                data-price="17500">Add</button>
+                        </div>
+                    </div>
+                    <div class="premium-test-card" data-centre="all">
+                        <div class="discount-badge">PREMIUM DEAL</div>
+                        <div class="card-status status-vital">Nuclear Medicine</div>
+                        <div class="card-icon"><i class="fas fa-radiation"></i></div>
+                        <h3>Advanced PET-CT Scan</h3>
+                        <p>Precision diagnostic tool for metabolic and functional imaging.</p>
+                        <div class="card-action">
+                            <div class="price-container">
+                                <span class="old-price-line">₹30,000</span>
+                                <span class="price">₹22,000</span>
+                            </div>
+                            <button class="add-to-cart btn-mini" data-id="pet-ct" data-name="Advanced PET-CT"
+                                data-price="22000">Add</button>
+                        </div>
+                    </div>
+                    <!-- Neuro Centre Tests -->
+                    <div class="premium-test-card" data-centre="neuro">
+                        <div class="card-status status-vital">Centre Exclusive</div>
+                        <div class="card-icon"><i class="fas fa-brain"></i></div>
+                        <h3>EEG (Sleep/Awake)</h3>
+                        <p>Recording brain electrical activity for neurological screening.</p>
+                        <div class="card-action">
+                            <span class="price">₹2,200</span>
+                            <button class="add-to-cart btn-mini" data-id="eeg-centre" data-name="EEG"
+                                data-price="2200">Add</button>
+                        </div>
+                    </div>
+                    <div class="premium-test-card" data-centre="neuro">
+                        <div class="card-status status-fast">Centre Exclusive</div>
+                        <div class="card-icon"><i class="fas fa-bolt"></i></div>
+                        <h3>EMG / NCV</h3>
+                        <p>Electromyography to assess muscle and nerve health.</p>
+                        <div class="card-action">
+                            <span class="price">₹3,500</span>
+                            <button class="add-to-cart btn-mini" data-id="emg-ncv" data-name="EMG / NCV"
+                                data-price="3500">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Ortho Centre Tests -->
+                    <div class="premium-test-card" data-centre="ortho">
+                        <div class="card-status status-vital">Advanced Radiology</div>
+                        <div class="card-icon"><i class="fas fa-bone"></i></div>
+                        <h3>DEXA Scan (Bone Density)</h3>
+                        <p>Gold standard for measuring bone mineral density and strength.</p>
+                        <div class="card-action">
+                            <span class="price">₹4,500</span>
+                            <button class="add-to-cart btn-mini" data-id="dexa-scan" data-name="DEXA Scan"
+                                data-price="4500">Add</button>
+                        </div>
+                    </div>
+                    <div class="premium-test-card" data-centre="ortho">
+                        <div class="card-status status-fast">Precise</div>
+                        <div class="card-icon"><i class="fas fa-x-ray"></i></div>
+                        <h3>Digital X-Ray (Multiple Views)</h3>
+                        <p>High-resolution imaging for bone and joint assessment.</p>
+                        <div class="card-action">
+                            <span class="price">₹800</span>
+                            <button class="add-to-cart btn-mini" data-id="digital-xray" data-name="Digital X-Ray"
+                                data-price="800">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-40">
+                    <button class="btn-primary home-nav-trigger">Back to Home</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Home Sample Collection Page (SPA) -->
+    <div id="home-collection-page" style="display: none;">
+        <section class="home-collection-hero">
+            <div class="container">
+                <div class="hc-hero-flex">
+                    <div class="hc-hero-content">
+                        <span class="badge">At-Home Service</span>
+                        <h1>Safe & Accurate <br><span class="highlight">Home Collection</span></h1>
+                        <p>Get your tests done from the comfort of your home. Professional phlebotomists, certified
+                            labs, and digital reports.</p>
+                        <ul class="hc-usp">
+                            <li><i class="fas fa-check-circle"></i> Certified Phlebotomists</li>
+                            <li><i class="fas fa-check-circle"></i> Timely Report Delivery</li>
+                            <li><i class="fas fa-check-circle"></i> 100% Sterile Kits</li>
+                        </ul>
+                        <a href="#appointment" class="btn-primary hc-nav-trigger">Book a Visit Now</a>
+                    </div>
+                    <div class="hc-hero-visual">
+                        <img src="assets/lab-test.png" alt="Home Collection" class="animate-float">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="organ-search-section">
+            <div class="container">
+                <h2 class="section-title text-center">Search Tests by <span class="highlight">Relevance</span></h2>
+                <div class="organ-grid">
+                    <div class="organ-item active" data-organ="all">
+                        <div class="organ-icon"><i class="fas fa-th-large"></i></div>
+                        <span>All</span>
+                    </div>
+                    <div class="organ-item" data-organ="heart">
+                        <div class="organ-icon"><i class="fas fa-heart"></i></div>
+                        <span>Heart</span>
+                    </div>
+                    <div class="organ-item" data-organ="liver">
+                        <div class="organ-icon"><i class="fas fa-notes-medical"></i></div>
+                        <span>Liver</span>
+                    </div>
+                    <div class="organ-item" data-organ="kidney">
+                        <div class="organ-icon"><i class="fas fa-procedures"></i></div>
+                        <span>Kidney</span>
+                    </div>
+                    <div class="organ-item" data-organ="bone">
+                        <div class="organ-icon"><i class="fas fa-bone"></i></div>
+                        <span>Bones</span>
+                    </div>
+                    <div class="organ-item" data-organ="diabetes">
+                        <div class="organ-icon"><i class="fas fa-cube"></i></div>
+                        <span>Diabetes</span>
+                    </div>
+                    <div class="organ-item" data-organ="thyroid">
+                        <div class="organ-icon"><i class="fas fa-dna"></i></div>
+                        <span>Thyroid</span>
+                    </div>
+                    <div class="organ-item" data-organ="fever">
+                        <div class="organ-icon"><i class="fas fa-thermometer-half"></i></div>
+                        <span>Fever</span>
+                    </div>
+                </div>
+
+                <div class="hc-tests-catalog">
+                    <div class="tests-grid-premium" id="hc-dynamic-grid">
+                        <div class="premium-test-card" data-cat="heart">
+                            <div class="card-status status-vital">Home Visit</div>
+                            <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
+                            <h3>ECG @ Home</h3>
+                            <p>Professional heart rhythm monitoring at your doorstep.</p>
+                            <div class="card-action">
+                                <span class="price">₹600</span>
+                                <button class="add-to-cart btn-mini" data-id="ecg-home" data-name="ECG @ Home"
+                                    data-price="600">Add</button>
+                            </div>
+                        </div>
+                        <div class="premium-test-card" data-cat="diabetes">
+                            <div class="card-status status-fast">Instant</div>
+                            <div class="card-icon"><i class="fas fa-syringe"></i></div>
+                            <button class="add-to-cart btn-mini" data-id="hba1c-home" data-name="Hba1c"
+                                data-price="650">Add</button>
+                        </div>
+                    </div>
+                    <div class="premium-test-card" data-cat="fever">
+                        <div class="card-status status-vital">Vital</div>
+                        <div class="card-icon"><i class="fas fa-virus"></i></div>
+                        <h3>Fever Panel</h3>
+                        <p>Essential screenings for malaria, dengue, and typhoid.</p>
+                        <div class="card-action">
+                            <span class="price">₹1,500</span>
+                            <button class="add-to-cart btn-mini" data-id="fever-home" data-name="Fever Panel"
+                                data-price="1500">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+    </div>
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <div class="logo">
+                <i class="fas fa-microscope"></i> VIJAYA
+            </div>
+            <p>Pioneering diagnostics since 1981. Dedicated to accurate results and excellent patient care.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Our Centers</a></li>
+                <li><a href="#">Health Packages</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="#">Pathology</a></li>
+                <li><a href="#">Radiology</a></li>
+                <li><a href="#">Cardiology</a></li>
+                <li><a href="#">Health Checkups</a></li>
+                <li><a href="#">Corporate Wellness</a></li>
+            </ul>
+        </div>
+        <div class="footer-newsletter">
+            <h3>Newsletter</h3>
+            <p>Subscribe for health tips and exclusive offers.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Email Address">
+                <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2026 Vijaya Diagnostics. All Rights Reserved. Designed for Portfolio.</p>
+        </div>
+    </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Selection</h3>
+            <i class="fas fa-times" id="cart-close"></i>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Items injected via JS -->
+            <p class="empty-cart-msg">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="total-price">
+                <span>Total:</span>
+                <span id="cart-total">₹0</span>
+            </div>
+            <button class="btn-checkout">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Quick Actions Side Stand (Floating) -->
+    <div class="side-quick-actions">
+        <a href="#appointment" class="quick-action-item home-nav-trigger" title="Book Appointment">
+            <i class="fas fa-calendar-check"></i>
+            <span>Book</span>
+        </a>
+        <a href="#tests" class="quick-action-item home-nav-trigger" title="Lab Tests">
+            <i class="fas fa-microscope"></i>
+            <span>Tests</span>
+        </a>
+        <a href="#prescription" class="quick-action-item home-nav-trigger" title="Upload Prescription">
+            <i class="fas fa-prescription"></i>
+            <span>Upload</span>
+        </a>
+        <a href="#contact" class="quick-action-item home-nav-trigger" title="WhatsApp Us">
+            <i class="fab fa-whatsapp"></i>
+            <span>Chat</span>
+        </a>
+    </div>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Auth Guard Overlay -->
+    <div class="auth-guard-overlay" id="auth-guard">
+        <div class="auth-guard-content">
+            <div class="logo">VIJAYA <span style="color: var(--accent-color);">DIAGNOSTIC</span></div>
+            <h2>Premium Diagnostics <br><span class="highlight">Await You</span></h2>
+            <p>Please log in to browse our specialized centre tests and access your personalized health dashboard.</p>
+            <div class="auth-actions">
+                <button class="google-login-btn" id="guard-google-login"
+                    style="background: #fff; color: #444; border: 1px solid #dadce0; display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; padding: 15px; border-radius: 50px; font-weight: 600; cursor: pointer; margin-bottom: 15px;">
+                    <i class="fab fa-google" style="color: #4285F4;"></i> Continue with Google
+                </button>
+                <div class="divider" style="margin: 10px 0;">OR</div>
+                <button class="btn-primary" style="width: 100%; margin-top: 15px;" id="guard-email-login">Login with
+                    Email</button>
+            </div>
+            <p class="modal-footer mt-20">New here? <a href="#" id="guard-signup">Create Account</a></p>
+        </div>
+    </div>
+
+    <!-- OTP Verification Modal -->
+    <div class="modal-overlay" id="otp-modal">
+        <div class="modal-content glass" style="max-width: 400px;">
+            <i class="fas fa-times modal-close" id="otp-close"></i>
+            <div class="logo-text" style="font-size: 2rem; margin-bottom: 20px; text-align: center;">
+                VIJAYA <span style="color: var(--accent-color);">DIAGNOSTIC</span>
+            </div>
+            <h3 style="text-align: center; margin-bottom: 15px;">Verify OTP</h3>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 25px;">
+                We've sent a 6-digit code to <strong id="otp-email-display">email@example.com</strong>
+            </p>
+            <form id="otp-form">
+                <div style="display: flex; gap: 10px; justify-content: center; margin-bottom: 25px;">
+                    <input type="text" maxlength="1" class="otp-input"
+                        style="width: 45px; height: 50px; text-align: center; font-size: 1.5rem; border: 2px solid #e1e8ef; border-radius: 8px;">
+                    <input type="text" maxlength="1" class="otp-input"
+                        style="width: 45px; height: 50px; text-align: center; font-size: 1.5rem; border: 2px solid #e1e8ef; border-radius: 8px;">
+                    <input type="text" maxlength="1" class="otp-input"
+                        style="width: 45px; height: 50px; text-align: center; font-size: 1.5rem; border: 2px solid #e1e8ef; border-radius: 8px;">
+                    <input type="text" maxlength="1" class="otp-input"
+                        style="width: 45px; height: 50px; text-align: center; font-size: 1.5rem; border: 2px solid #e1e8ef; border-radius: 8px;">
+                    <input type="text" maxlength="1" class="otp-input"
+                        style="width: 45px; height: 50px; text-align: center; font-size: 1.5rem; border: 2px solid #e1e8ef; border-radius: 8px;">
+                    <input type="text" maxlength="1" class="otp-input"
+                        style="width: 45px; height: 50px; text-align: center; font-size: 1.5rem; border: 2px solid #e1e8ef; border-radius: 8px;">
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; padding: 15px;">
+                    Verify & Continue
+                </button>
+            </form>
+            <p style="text-align: center; margin-top: 20px; color: var(--text-light);">
+                Didn't receive code? <a href="#" id="resend-otp"
+                    style="color: var(--primary-color); font-weight: 600;">Resend OTP</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal-overlay" id="signup-modal">
+        <div class="modal-content glass">
+            <i class="fas fa-times modal-close" id="signup-close"></i>
+            <div class="logo-text" style="font-size: 2rem; margin-bottom: 20px; text-align: center;">
+                VIJAYA <span style="color: var(--accent-color);">DIAGNOSTIC</span>
+            </div>
+            <h3 style="text-align: center; margin-bottom: 25px;">Create Your Account</h3>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="signup-name" placeholder="Enter your full name" required
+                        style="width: 100%; padding: 12px; border: 1px solid #e1e8ef; border-radius: 8px; font-size: 1rem;">
+                </div>
+                <div class="form-group" style="margin-top: 15px;">
+                    <label>Email Address</label>
+                    <input type="email" id="signup-email" placeholder="Enter your email" required
+                        style="width: 100%; padding: 12px; border: 1px solid #e1e8ef; border-radius: 8px; font-size: 1rem;">
+                </div>
+                <div class="form-group" style="margin-top: 15px;">
+                    <label>Phone Number</label>
+                    <input type="tel" id="signup-phone" placeholder="+91 98765 43210" required
+                        style="width: 100%; padding: 12px; border: 1px solid #e1e8ef; border-radius: 8px; font-size: 1rem;">
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 25px; padding: 15px;">
+                    Create Account
+                </button>
+            </form>
+            <div class="divider" style="margin: 20px 0;">OR</div>
+            <button class="google-login-btn" id="signup-google-btn"
+                style="background: #fff; color: #444; border: 1px solid #dadce0; display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; padding: 15px; border-radius: 50px; font-weight: 600; cursor: pointer;">
+                <i class="fab fa-google" style="color: #4285F4;"></i> Sign up with Google
+            </button>
+            <p style="text-align: center; margin-top: 20px; color: var(--text-light);">
+                Already have an account? <a href="#" id="goto-login"
+                    style="color: var(--primary-color); font-weight: 600;">Login</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal-overlay" id="login-modal">
+        <div class="modal-content glass">
+            <i class="fas fa-times modal-close" id="login-close"></i>
+            <div class="logo-text" style="font-size: 2rem; margin-bottom: 20px; text-align: center;">
+                VIJAYA <span style="color: var(--accent-color);">DIAGNOSTIC</span>
+            </div>
+            <h3 style="text-align: center; margin-bottom: 25px;">Welcome Back</h3>
+            <form id="login-form">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="login-email" placeholder="Enter your email" required
+                        style="width: 100%; padding: 12px; border: 1px solid #e1e8ef; border-radius: 8px; font-size: 1rem;">
+                </div>
+                <div class="form-group" style="margin-top: 15px;">
+                    <label>Password</label>
+                    <input type="password" id="login-password" placeholder="Enter your password" required
+                        style="width: 100%; padding: 12px; border: 1px solid #e1e8ef; border-radius: 8px; font-size: 1rem;">
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 25px; padding: 15px;">
+                    Login
+                </button>
+            </form>
+            <div class="divider" style="margin: 20px 0;">OR</div>
+            <button class="google-login-btn" id="login-google-btn"
+                style="background: #fff; color: #444; border: 1px solid #dadce0; display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; padding: 15px; border-radius: 50px; font-weight: 600; cursor: pointer;">
+                <i class="fab fa-google" style="color: #4285F4;"></i> Continue with Google
+            </button>
+            <p style="text-align: center; margin-top: 20px; color: var(--text-light);">
+                Don't have an account? <a href="#" id="goto-signup"
+                    style="color: var(--primary-color); font-weight: 600;">Sign Up</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal-overlay" id="payment-modal">
+        <div class="modal-content glass" style="max-width: 500px;">
+            <i class="fas fa-times modal-close" id="payment-close"></i>
+            <div class="logo-text" style="font-size: 1.5rem; margin-bottom: 20px; text-align: center;">
+                Secure <span style="color: var(--accent-color);">Checkout</span>
+            </div>
+
+            <div class="payment-summary"
+                style="background: rgba(255,255,255,0.5); padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                    <span>Total Amount:</span>
+                    <strong id="payment-amount" style="font-size: 1.2rem; color: var(--primary-color);">₹0</strong>
+                </div>
+            </div>
+
+            <div class="payment-methods" style="display: flex; gap: 10px; margin-bottom: 20px;">
+                <button class="payment-tab active" data-method="card"
+                    style="flex: 1; padding: 10px; border: 1px solid var(--primary-color); background: var(--primary-color); color: white; border-radius: 5px; cursor: pointer;">Card</button>
+                <button class="payment-tab" data-method="upi"
+                    style="flex: 1; padding: 10px; border: 1px solid #ccc; background: white; border-radius: 5px; cursor: pointer;">UPI</button>
+            </div>
+
+            <!-- Card Form -->
+            <form id="payment-form-card">
+                <div class="form-group">
+                    <label>Card Number</label>
+                    <div style="position: relative;">
+                        <input type="text" placeholder="0000 0000 0000 0000" maxlength="19" required
+                            style="width: 100%; padding: 12px; padding-left: 40px; border: 1px solid #e1e8ef; border-radius: 8px;">
+                        <i class="fas fa-credit-card"
+                            style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #888;"></i>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 15px; margin-top: 15px;">
+                    <div class="form-group" style="flex: 1;">
+                        <label>Expiry Date</label>
+                        <input type="text" placeholder="MM/YY" maxlength="5" required
+                            style="width: 100%; padding: 12px; border: 1px solid #e1e8ef; border-radius: 8px;">
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label>CVV</label>
+                        <input type="password" placeholder="123" maxlength="3" required
+                            style="width: 100%; padding: 12px; border: 1px solid #e1e8ef; border-radius: 8px;">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-top: 15px;">
+                    <label>Card Holder Name</label>
+                    <input type="text" placeholder="Name on Card" required
+                        style="width: 100%; padding: 12px; border: 1px solid #e1e8ef; border-radius: 8px;">
+                </div>
+                <button type="submit" class="btn-primary"
+                    style="width: 100%; margin-top: 25px; padding: 15px; display: flex; justify-content: center; align-items: center; gap: 10px;">
+                    <i class="fas fa-lock"></i> Pay Securely
+                </button>
+            </form>
+
+            <!-- UPI Form (Hidden initially) -->
+            <form id="payment-form-upi" style="display: none;">
+                <div class="form-group">
+                    <label>UPI ID</label>
+                    <input type="text" placeholder="username@upi" required
+                        style="width: 100%; padding: 12px; border: 1px solid #e1e8ef; border-radius: 8px;">
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 25px; padding: 15px;">
+                    Verify & Pay
+                </button>
+            </form>
+
+            <div id="payment-success" style="display: none; text-align: center; padding: 20px;">
+                <div
+                    style="width: 60px; height: 60px; background: #4CAF50; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+                    <i class="fas fa-check" style="color: white; font-size: 30px;"></i>
+                </div>
+                <h3 style="color: #4CAF50;">Payment Successful!</h3>
+                <p>Order ID: #VJ<span id="order-id"></span></p>
+                <p>Redirecting...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-top-btn" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+    <!-- My Profile Modal -->
+    <div class="modal-overlay" id="profile-details-modal">
+        <div class="modal-content glass" style="max-width: 500px;">
+            <i class="fas fa-times modal-close" id="profile-details-close"></i>
+            <h2 style="text-align: center; margin-bottom: 20px;">My Profile</h2>
+            
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 15px; margin-bottom: 30px;">
+                <img src="https://ui-avatars.com/api/?name=User&size=128" id="profile-modal-avatar" class="profile-avatar-large" style="width: 100px; height: 100px;">
+                <div style="text-align: center;">
+                    <h3 id="profile-modal-name" style="color: var(--primary-color);">Guest User</h3>
+                    <p id="profile-modal-email" style="color: #666;">guest@example.com</p>
+                </div>
+            </div>
+
+            <div class="info-grid" style="display: grid; gap: 15px;">
+                <div class="info-card" style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #eee;">
+                    <label style="font-size: 0.9rem; color: #888;">Mobile Number</label>
+                    <div style="font-weight: 600;">+91 98765 43210</div>
+                </div>
+                <div class="info-card" style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #eee;">
+                    <label style="font-size: 0.9rem; color: #888;">Member Since</label>
+                    <div style="font-weight: 600;">Jan 2026</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Welcome Overlay -->
+    <div id="welcome-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.95); z-index: 9999; display: none; align-items: center; justify-content: center; flex-direction: column; opacity: 0; transition: opacity 0.5s;">
+        <div style="font-size: 3rem; font-weight: 700; color: var(--primary-color);">Welcome, <span id="welcome-name" style="color: var(--accent-color);">User</span>!</div>
+        <p style="font-size: 1.2rem; margin-top: 10px; color: #555;">Accurate Diagnostics. You Can Trust.</p>
+        <div style="margin-top: 20px; font-size: 2rem;"></div>
+    </div>
